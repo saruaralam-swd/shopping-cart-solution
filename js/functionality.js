@@ -8,9 +8,9 @@ function QuantityPrice(isIncrease, input, price, amount) {
   let newCaseNumber;
 
   if (isIncrease) {
-   newCaseNumber = previousCaseNumber + 1;
+    newCaseNumber = previousCaseNumber + 1;
   }
-  else{
+  else {
     newCaseNumber = previousCaseNumber - 1;
   }
   caseNumberField.value = newCaseNumber;

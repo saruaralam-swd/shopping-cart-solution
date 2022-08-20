@@ -1,49 +1,51 @@
 //case-minus-btn case-input case-plus-btn case-price
 // Subtotal, tax, total
 
-// case: + button 
+// case: plus button 
 document.getElementById('case-plus-btn').addEventListener('click', () => {
-  const casePrice = QuantityPrice(true, 'case-input', 'case-price', 5);
+  const casePrice = QuantityPrice(true, 'case-input', 'case-price', 59); // 59
   
+  // phonePrice
   const phonePriceElement = document.getElementById('phone-price');
   const phonePriceString = phonePriceElement.innerText;
-  const phonePriceNumber = parseInt(phonePriceString);
+  const phonePriceNumber = parseInt(phonePriceString); // 1219
 
-  const subTotal = casePrice + phonePriceNumber;
-
+  // casePrice + phonePrice
+  const subTotal = casePrice + phonePriceNumber;  // 59 + 1219  = 1278
   const subtotalElement = document.getElementById('subtotal');
   subtotalElement.innerText = subTotal;
 
-  // tax
-  const tax = ((subTotal * 10) / 100);
+  // tax: (subtotal * 10)  / 100
+  const tax = ((subTotal * 10) / 100).toFixed(2); // ((1278 * 10 ) / 100) = 127.8
   const taxElement = document.getElementById('tax');
   taxElement.innerText = tax;
 
-  //total
-  const total = subTotal + tax;
+  //total: subtotal + tax
+  const total = subTotal + tax; // 1278 + 127.8
   const totalElement = document.getElementById('total');
   totalElement.innerText = total;
 });
 
 // case: - button 
 document.getElementById('case-minus-btn').addEventListener('click', () => {
-  const casePrice = QuantityPrice(false, 'case-input', 'case-price', 5);
+  const casePrice = QuantityPrice(false, 'case-input', 'case-price', 59);
   
+  // phonePrice
   const phonePriceElement = document.getElementById('phone-price');
   const phonePriceString = phonePriceElement.innerText;
   const phonePriceNumber = parseInt(phonePriceString);
 
+  // casePrice + phonePrice
   const subTotal = casePrice + phonePriceNumber;
-
   const subtotalElement = document.getElementById('subtotal');
   subtotalElement.innerText = subTotal;
 
-  // tax
-  const tax = ((subTotal * 10) / 100);
+  // tax: (subtotal * 10)  / 100
+  const tax = ((subTotal * 10) / 100).toFixed(2);
   const taxElement = document.getElementById('tax');
   taxElement.innerText = tax;
 
-  //total
+  //total: subtotal + tax
   const total = subTotal + tax;
   const totalElement = document.getElementById('total');
   totalElement.innerText = total;
