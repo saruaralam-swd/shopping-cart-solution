@@ -11,11 +11,11 @@
   <body>
     <section>
       <div class="container">
-        <h2>My shopping cart</h2>
+        <h2 class="mt-5">My shopping cart</h2>
         <div class="cart">
-          <div class="col-md-12 col-lg-10 mx-auto">
+          <div class="col-md-12 col-lg-10 mx-auto" id="itms">
             <!-- iPhone 11 128GB Black -->
-            <div class="cart-item">
+            <div class="cart-item" id="phone">
               <div class="row">
                 <div class="col-md-7 center-item">
                   <img src="images/product-1.png" alt="" />
@@ -29,13 +29,13 @@
                     <button id="phone-plus-btn" class="btn btn-default"><i class="fas fa-plus"></i></button>
                   </div>
                   <h5>$<span id="phone-price">10</span></h5>
-                  <img src="images/remove.png" alt="" class="remove-item" />
+                  <img id="phone-close-btn" src="images/remove.png" alt="" class="remove-item" />
                 </div>
               </div>
             </div>
 
             <!-- iPhone 11 Silicone Case - Black -->
-            <div class="cart-item">
+            <div class="cart-item" id="case">
               <div class="row">
                 <div class="col-md-7 center-item mx-auto">
                   <img src="images/product-2.png" alt="" />
@@ -48,18 +48,18 @@
                      <button id="case-plus-btn" class="btn btn-default"><i class="fas fa-plus"></i></button>
                   </div>
                   <h5>$<span id="case-price">5</span></h5>
-                  <img src="images/remove.png" alt="" class="remove-item" />
+                  <img id="case-close-btn" src="images/remove.png" alt="" class="remove-item" />
                 </div>
               </div>
             </div>
-
+            
             <!-- total summery  -->
             <div class="cart-item">
               <div class="row">
                 <div class="col-md-8">
-                  <h5>Subtotal:</h5>
-                  <h5>Tax:</h5>
-                  <h5>Total:</h5>
+                  <h5>Subtotal</h5>
+                  <h5>Tax (10%)</h5>
+                  <h5>Total</h5>
                 </div>
 
                 <div class="col-md-4 status">
@@ -69,6 +69,7 @@
                 </div>
               </div>
             </div>
+          
             <div class="col-md-12 pt-4 pb-4">
               <button type="button" class="btn btn-success check-out">Check Out</button>
             </div>

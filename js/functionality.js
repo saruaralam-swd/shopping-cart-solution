@@ -1,7 +1,6 @@
 //case-minus-btn case-input case-plus-btn case-price
 //phone-minus-btn, phone-input, phone-plus-btn, phone-price
 
-
 function QuantityPrice(isIncrease, input, price, amount) {
   const caseNumberField = document.getElementById(input);
   const caseNumberString = caseNumberField.value;
