@@ -1,32 +1,18 @@
 //case-minus-btn case-input case-plus-btn case-price
-
-function updateCaseNumber(isIncrease) {
-  const caseNumberField = document.getElementById('case-input');
-  const caseNumberString = caseNumberField.value;
-  const previousCaseNumber = parseInt(caseNumberString);
-  
-  let newCaseNumber;
-
-  if (isIncrease) {
-   newCaseNumber = previousCaseNumber + 1;
-  }
-  else{
-    newCaseNumber = previousCaseNumber - 1;
-  }
-  caseNumberField.value = newCaseNumber;
-
-  
-  const caseTotalPrice = document.getElementById('case-price');
-  const currentPrice = newCaseNumber * 59;
-  caseTotalPrice.innerText = currentPrice;
-}
+// Subtotal, tax, total
 
 // case: plus button 
 document.getElementById('case-plus-btn').addEventListener('click', () => {
-  updateCaseNumber(true);
+  const casePrice = QuantityPrice(true, 'case-input', 'case-price', 5);
+  console.log(casePrice);
+
+  
 });
 
 // case: minus button 
-document.getElementById('case-minus-btn').addEventListener('click', () => { 
-  updateCaseNumber(false);
+document.getElementById('case-minus-btn').addEventListener('click', () => {
+  const casePrice = QuantityPrice(false, 'case-input', 'case-price', 5);
+  console.log(casePrice);
+
+  
 });
