@@ -16,7 +16,8 @@ document.getElementById('case-plus-btn').addEventListener('click', () => {
   subtotalElement.innerText = subTotal;
 
   // tax: (subtotal * 10)  / 100
-  const tax = ((subTotal * 10) / 100).toFixed(2); // ((1278 * 10 ) / 100) = 127.8
+  const taxString = ((subTotal * 10) / 100).toFixed(2); // ((1278 * 10 ) / 100) = 127.8
+  const tax = parseFloat(taxString);
   const taxElement = document.getElementById('tax');
   taxElement.innerText = tax;
 
@@ -41,7 +42,8 @@ document.getElementById('case-minus-btn').addEventListener('click', () => {
   subtotalElement.innerText = subTotal;
 
   // tax: (subtotal * 10)  / 100
-  const tax = ((subTotal * 10) / 100).toFixed(2);
+  const taxString = ((subTotal * 10) / 100).toFixed(2);
+  const tax = parseFloat(taxString);
   const taxElement = document.getElementById('tax');
   taxElement.innerText = tax;
 

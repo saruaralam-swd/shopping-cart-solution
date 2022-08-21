@@ -16,7 +16,8 @@ document.getElementById('phone-plus-btn').addEventListener('click', () => {
   subtotalElement.innerText = subTotal;
   
   // Tax : (subtotal * 10) / 100
-  const tax = ((subTotal * 10) / 100).toFixed(2);
+  const taxString = ((subTotal * 10) / 100).toFixed(2);
+  const tax = parseFloat(taxString);
   const taxElement = document.getElementById('tax');
   taxElement.innerText = tax;
   
@@ -41,7 +42,8 @@ document.getElementById('phone-minus-btn').addEventListener('click', () => {
   subtotalElement.innerText = subTotal;
 
   // Tax : (subtotal * 10) / 100
-  const tax = ((subTotal * 10) / 100).toFixed(2);
+  const taxString = ((subTotal * 10) / 100).toFixed(2);
+  const tax = parseFloat(taxString);
   const taxElement = document.getElementById('tax');
   taxElement.innerText = tax;
 
