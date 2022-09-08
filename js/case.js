@@ -4,11 +4,13 @@
 // case: plus button 
 document.getElementById('case-plus-btn').addEventListener('click', () => {
   const casePrice = QuantityPrice(true, 'case-input', 'case-price', 59); // 59
-  
+
   // phonePrice
-  const phonePriceElement = document.getElementById('phone-price');
-  const phonePriceString = phonePriceElement.innerText;
-  const phonePriceNumber = parseInt(phonePriceString); // 1219
+  // const phonePriceElement = document.getElementById('phone-price');
+  // const phonePriceString = phonePriceElement.innerText;
+  // const phonePriceNumber = parseInt(phonePriceString); // 1219
+
+  const phonePriceNumber = stringToNumber();
 
   // casePrice + phonePrice
   const subTotal = casePrice + phonePriceNumber;  // 59 + 1219  = 1278
@@ -27,14 +29,18 @@ document.getElementById('case-plus-btn').addEventListener('click', () => {
   totalElement.innerText = total;
 });
 
-// case: - button 
-document.getElementById('case-minus-btn').addEventListener('click', () => {
-  const casePrice = QuantityPrice(false, 'case-input', 'case-price', 59);
-  
-  // phonePrice
+stringToNumber = () => {
   const phonePriceElement = document.getElementById('phone-price');
   const phonePriceString = phonePriceElement.innerText;
   const phonePriceNumber = parseInt(phonePriceString);
+  return phonePriceNumber;
+}
+
+// case: - button 
+document.getElementById('case-minus-btn').addEventListener('click', () => {
+  const casePrice = QuantityPrice(false, 'case-input', 'case-price', 59);
+
+  const phonePriceNumber = stringToNumber();
 
   // casePrice + phonePrice
   const subTotal = casePrice + phonePriceNumber;
@@ -56,7 +62,7 @@ document.getElementById('case-minus-btn').addEventListener('click', () => {
 
 // closed button 
 // phone-close-btn,  case-close-btn
-document.getElementById('case-close-btn').addEventListener('click', function() {
+document.getElementById('case-close-btn').addEventListener('click', function () {
   const caseCloseBtn = document.getElementById('case');
   caseCloseBtn.style.display = 'none';
 });
